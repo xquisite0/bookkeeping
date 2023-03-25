@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Editing</title>
+        <style>
+            body {
+                background-color: black;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Editing {{ Title }}</h1>
+        <p>Leave fields blank if you do not wish to edit them specifically.</p>
+        <form method="POST" action={{ url_for('edit', Title=Title) }}>
+            <table>
+                <tr>
+                    <td>Book Title: </td>
+                    <td><input type="text" name="Title"></td>
+                </tr>
+                <tr>
+                    <td>Book Status (0 for reading, 1 for finished): </td>
+                    <td><input type="text" name="Status"></td>
+                </tr>
+                <tr>
+                    <td>Book Genre (space-delimited): </td>
+                    <td><input type="text" name="Genre"></td>
+                </tr>
+                <tr>
+                    <td>Book Rating (if finished): </td>
+                    <td><input type="text" name="Rating"></td>
+                </tr>
+                <tr>
+                    <td>Book Review: </td>
+                    <td><textarea name="Review"></textarea></td>
+                </tr>
+                <tr>
+                    <td><input type="submit"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

@@ -21,12 +21,20 @@
                 <th>Genre</th>
                 <th>Rating</th>
                 <th>Review</th>
+                <th>Delete</th>
+                <th>Edit</th>
             </tr>
             {% for book in books %}
             <tr>
-                {% for data in book %}
+                {% for key, data in book.items() %}
                 <td>{{ data }}</td>
                 {% endfor %}
+                <td>
+                    <form action={{ url_for('delete', Title=book['Title']) }} method="POST"><input type="submit" value="Delete"></form>
+                </td>
+                <td>
+                    <form action={{ url_for('edit', Title=book['Title']) }}><input type="submit" value="Edit"></form>
+                </td>
             </tr>
             {% endfor %}
         </table>
