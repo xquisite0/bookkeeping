@@ -51,5 +51,28 @@ def view():
     client.close()
     return render_template("view.html", books=books)
 
+@app.route("/delete/<Title>")
+def delete(Title):
+    client = pymongo.MongoClient(env['URI'])
+    db = client.get_database("books")
+    coll = db.get_collection("book")
+    cur.delete_one({'Title': Title})
+    cur = coll.find()
+
+    books = []
+    for row in cur:
+        book = []
+        book.append(row['Title'])
+        if row['Status'] == 0:
+            book.append("Reading")
+        else:
+            book.append("Read")
+        book.append(row['Genre'])
+        book.append(row['Rating'])
+        book.append(row['Review'])
+        books.append(book)
+    client.close()
+    return render_template("view.html", books=books)
+
 if __name__ == '__main__':
     app.run()
