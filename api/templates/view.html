@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>View Books</title>
+        <style>
+            th, td, table {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>View Books</h1>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Genre</th>
+                <th>Rating</th>
+                <th>Review</th>
+            </tr>
+            {% for book in books %}
+            <tr>
+                {% for data in book %}
+                <td>{{ data }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

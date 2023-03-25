@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New Book</title>
+    </head>
+    <body>
+        <h1>New Book</h1>
+        <form method="POST">
+            <table>
+                <tr>
+                    <td>Book Title: </td>
+                    <td><input type="text" name="Title"></td>
+                </tr>
+                <tr>
+                    <td>Book Status (0 for reading, 1 for finished): </td>
+                    <td><input type="text" name="Status"></td>
+                </tr>
+                <tr>
+                    <td>Book Genre (space-delimited): </td>
+                    <td><input type="text" name="Genre"></td>
+                </tr>
+                <tr>
+                    <td>Book Rating (if finished): </td>
+                    <td><input type="text" name="Rating"></td>
+                </tr>
+                <tr>
+                    <td>Book Review (if finished): </td>
+                    <td><textarea name="Review"></textarea></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="Submit"></td>
+                </tr>
+            </table>
+        </form>
+        <br>
+        <button><a href={{ url_for('view') }}>View Books</a></button>
+    </body>
+</html>
