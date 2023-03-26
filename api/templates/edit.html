@@ -6,6 +6,17 @@
             body {
                 background-color: black;
                 color: white;
+                font-family: Arial;
+            }
+            #submitButton {
+                padding: 8px;
+                border-radius: 5px;
+                font-family: Arial;
+            }
+            #submitButton:hover {
+                background-color: yellow;
+                transition: 0.7s;
+                padding: 15px; 
             }
         </style>
     </head>
@@ -35,7 +46,7 @@
                     <td><textarea name="Review"></textarea></td>
                 </tr>
                 <tr>
-                    <td><input type="submit"></td>
+                    <td><input type="submit" id="submitButton"></td>
                 </tr>
             </table>
         </form>

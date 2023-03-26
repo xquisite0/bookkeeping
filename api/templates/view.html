@@ -5,10 +5,26 @@
         <style>
             th, td, table {
                 border: 1px solid white;
+                padding: 5px;
             }
             body {
                 color: white;
                 background-color: black;
+                font-family: Arial;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            #newBookButton {
+                padding: 8px;
+                border-radius: 5px;
+                font-family: Arial;
+            }
+            #newBookButton:hover {
+                background-color: yellow;
+                transition: 0.7s;
+                padding: 15px; 
             }
         </style>
     </head>
@@ -39,6 +55,6 @@
             {% endfor %}
         </table>
         <br>
-        <button><a href={{ url_for('index') }}>New Book</a></button>
+        <button id="newBookButton"><a href={{ url_for('index') }}>New Book</a></button>
     </body>
 </html>
