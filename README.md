@@ -1,10 +1,14 @@
+# Book Keeping
 Basic CRUD web application to keep track of user's books read, with their ratings and reviews.
 
+## Stack
 Front-end: HTML/CSS
+
 Back-end: Flask
+
 Database: MongoDB
 
-Pages
+## Pages
 New Book: Allows user to enter a book's title, status (read/reading), genre, rating and review.
 
 View Book: Allows user to view information of all the books they have read or are reading. Also, allows for deletion and editing of each individual book
