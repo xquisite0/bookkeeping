@@ -8,15 +8,22 @@
                 color: white;
                 font-family: Arial;
             }
-            #submitButton {
+            button, #submitButton {
                 padding: 8px;
                 border-radius: 5px;
                 font-family: Arial;
             }
-            #submitButton:hover {
+            button:hover, #submitButton {
                 background-color: yellow;
                 transition: 0.7s;
                 padding: 15px; 
+            }
+            input[type='text'] {
+                width: 200px;
+            }
+            textarea {
+                width: 300px;
+                height: 150px;
             }
         </style>
     </head>
@@ -49,6 +56,8 @@
                     <td><input type="submit" id="submitButton"></td>
                 </tr>
             </table>
+            <button><a href={{ url_for('view') }} id="viewButton">View Books</a></button>
+            <button><a href={{ url_for('index') }} id="newBookButton">New Book</a></button>
         </form>
     </body>
 </html>
