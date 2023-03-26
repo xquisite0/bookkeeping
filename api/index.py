@@ -9,7 +9,7 @@ def gen(cur):
     for row in cur:
         book = {}
         book['Title'] = row['Title']
-        if row['Status'] == 0:
+        if row['Status'] == '0':
             book['Status'] = "Reading"
         else:
             book['Status'] = "Read"
