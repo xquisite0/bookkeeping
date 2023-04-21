@@ -50,7 +50,9 @@ def view():
     cur = coll.find()
     books = gen(cur)
     client.close()
+
     return render_template("view.html", books=books)
+    #return render_template("view.html", books=books, message=message['content'])
 
 @app.route("/delete/<Title>", methods=['POST'])
 def delete(Title):
