@@ -44,7 +44,7 @@ def index():
 @app.route("/view")
 def view(): 
 
-    client = pymongo.MongoClient(env.get(['URI'))
+    client = pymongo.MongoClient(env.get('URI'))
     db = client.get_database("books")
     coll = db.get_collection("book")
     cur = coll.find()
