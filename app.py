@@ -23,7 +23,7 @@ def index():
     if request.method == 'GET':
         return render_template("index.html")
 
-    client = pymongo.MongoClient(env['URI'])
+    client = pymongo.MongoClient(env.get('URI'))
     db = client.get_database("books")
     coll = db.get_collection("book")
     Title = request.form['Title']
@@ -44,7 +44,7 @@ def index():
 @app.route("/view")
 def view(): 
 
-    client = pymongo.MongoClient(env['URI'])
+    client = pymongo.MongoClient(env.get(['URI'))
     db = client.get_database("books")
     coll = db.get_collection("book")
     cur = coll.find()
@@ -56,7 +56,7 @@ def view():
 
 @app.route("/delete/<Title>", methods=['POST'])
 def delete(Title):
-    client = pymongo.MongoClient(env['URI'])
+    client = pymongo.MongoClient(env.get('URI'))
     db = client.get_database("books")
     coll = db.get_collection("book")
     coll.delete_one({'Title': Title})
@@ -86,7 +86,7 @@ def edit(Title):
         update['Rating'] = rating
     if len(review) > 0:
         update['Review'] = review
-    client = pymongo.MongoClient(env['URI'])
+    client = pymongo.MongoClient(env.get('URI'))
     db = client.get_database("books")
     coll = db.get_collection("book")
     coll.update_one({"Title":Title}, {"$set": update})
