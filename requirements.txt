@@ -2,4 +2,4 @@ Flask
 Jinja2
 gunicorn
 pymongo
-dns
+dnspython
