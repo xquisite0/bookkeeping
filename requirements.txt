@@ -1,1 +1,3 @@
-Flask==2.2.2
+Flask
+Jinja2
+gunicorn
